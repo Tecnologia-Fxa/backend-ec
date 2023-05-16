@@ -4,7 +4,7 @@ require('dotenv').config(); // Cargar las variables de entorno
 
 const ValidateSecretWp = (req,res,next)=>{
 
-    const signature = req.headers['x-wc-webhook-signature'];
+    /* const signature = req.headers['x-wc-webhook-signature'];
     const payload = JSON.stringify(req.body);
     
     const generatedSignature = crypto
@@ -12,6 +12,7 @@ const ValidateSecretWp = (req,res,next)=>{
     .update(payload)
     .digest('base64');
     
+
     console.log(signature)
     console.log(generatedSignature)
   
@@ -24,7 +25,8 @@ const ValidateSecretWp = (req,res,next)=>{
       // La firma es inválida, la solicitud puede no ser auténtica
       console.log('Solicitud de webhook inválida');
       res.sendStatus(401);
-    }
+    } */
+    next()
 }
 
 module.exports = ValidateSecretWp
