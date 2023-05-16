@@ -4,6 +4,8 @@ const ValidateSecretWp = (req,res,next)=>{
 
     const signature = req.headers['x-wc-webhook-signature'];
 
+    console.log(signature)
+
     if (process.env.SECRET === signature) {
       // La firma es válida, la solicitud es auténtica
       // Procesa la solicitud del webhook aquí
