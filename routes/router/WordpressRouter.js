@@ -2,8 +2,11 @@ const router = require('express').Router() //Objeto enrutador de express
 
 router.post('/create-order', (req,res)=>{
     const body = req.body
-    console.log(body)
-    res.json(body)
+    //mostrar resultado del webhook
+    console.log('Solicitud de webhook recibida:', body);
+  
+    // Enviar una respuesta al servidor de WooCommerce
+    res.sendStatus(200);
 })
 
 module.exports = router //Retornamos el objeto enrutador
