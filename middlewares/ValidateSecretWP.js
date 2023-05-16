@@ -8,7 +8,7 @@ const ValidateSecretWp = (req,res,next)=>{
     const payload = JSON.stringify(req.body);
     
     const generatedSignature = crypto
-    .createHmac('sha256', )
+    .createHmac('sha256', process.env.SECRET)
     .update(payload)
     .digest('base64');
     
