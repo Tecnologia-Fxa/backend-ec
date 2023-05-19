@@ -9,4 +9,13 @@ router.post('/create-order', (req,res)=>{
     res.sendStatus(200);
 })
 
+router.post('/cotizador-env', (req,res)=>{
+    const body = req.body
+    //mostrar resultado del webhook
+    console.log('Solicitud de webhook recibida:', body);
+  
+    // Enviar una respuesta al servidor de WooCommerce
+    res.sendStatus(200);
+})
+
 module.exports = router //Retornamos el objeto enrutador
