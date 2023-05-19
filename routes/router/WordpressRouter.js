@@ -15,7 +15,7 @@ router.post('/cotizador-env', (req,res)=>{
     console.log('Solicitud de webhook recibida:', body);
   
     // Enviar una respuesta al servidor de WooCommerce
-    res.sendStatus(200);
+    res.json({costo_envio:2.68});
 })
 
 module.exports = router //Retornamos el objeto enrutador
