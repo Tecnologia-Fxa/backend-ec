@@ -30,7 +30,7 @@ const WordpressController = {
             res.json({costo_envio:ciudad.trayecto_envio.costo_trayecto_envio});
             
         }else
-            res.json({costo_envio:1000});
+            res.json({costo_envio:"N/A"});
     }
 
 }
