@@ -15,7 +15,6 @@ CiudadModel.init({
 
     nombre_ciudad:{
         type: DataTypes.STRING(50),
-        unique: true,
         allowNull: false
     },
 
