@@ -27,10 +27,10 @@ const WordpressController = {
             })
     
             // Enviar una respuesta al servidor de WooCommerce
-            res.json({costo_envio:ciudad.trayecto_envio.costo_trayecto_envio});
+            res.json({costo_envio:ciudad.trayecto_envio.costo_trayecto_envio, estado_cotizador:1});
             
         }else
-            res.json({costo_envio:"N/A"});
+            res.json({costo_envio:0,estado_cotizador:3});
     }
 
 }
