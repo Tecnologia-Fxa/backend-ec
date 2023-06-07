@@ -51,7 +51,7 @@ const CrearPedidoJob = async (data) => {
           
       
           // Generar el nuevo documento basado en el actual
-          const nuevoDocumento = ManejoCodDoc(documentoActual?documentoActual.dataValues.documento:'070-002-000000001');
+          const nuevoDocumento = ManejoCodDoc(documentoActual?documentoActual.dataValues.documento:'070-002-000000002');
 
 
           let documento_ruc = data.meta_data.find(el => el.key === '_billing_document')

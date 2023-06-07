@@ -13,7 +13,7 @@ PedidoModel.init({
     },
 
     id_pedido:{
-        type: DataTypes.INTEGER
+        type: DataTypes.STRING(25)
     },
 
     documento:{
