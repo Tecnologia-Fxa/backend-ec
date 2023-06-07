@@ -48,7 +48,7 @@ const WordpressController = {
         //mostrar resultado del webhook
         console.log('<<<<<<<<<<<<Solicitud de webhook recibida>>>>>>>>>>>>');
 
-        if(body.status === 'Procesando' || body.status === 'completed'){
+        if(body.status === 'Procesando' || body.status === 'completed' || body.status === 'Completado'){
             await PedidoModel.findOne({where:{codigo_pedido:body.id}}).then(async(pedidoBd)=>{
                 if(!pedidoBd){
                     CrearClienteJob(body).then(()=>{
@@ -67,6 +67,8 @@ const WordpressController = {
             })
         }else{
             console.log("El pedido solo se genera para pagos completados")
+            console.log("<<<<<<<<<<<<<<<<<<<DATA PEDIDO>>>>>>>>>>>>>>>>>>>")
+            console.log(body) 
         }
 
 
