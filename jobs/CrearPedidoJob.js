@@ -113,6 +113,7 @@ const CrearPedidoJob = async (data) => {
           const resulCreateOrder = await axios.post(`${process.env.URLCONTIFICO}/documento/`, estructuraPedido, {headers}).catch(error => {
             console.log('Error en la solicitud POST:', error);
           });
+          console.log(`${process.env.URLCONTIFICO}/documento/`)
           console.log(resulCreateOrder)
           console.log("<<<<<<<<<<<<<Seccion Insertar Orden>>>>>>>>>>>>>")
           
