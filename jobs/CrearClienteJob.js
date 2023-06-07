@@ -102,7 +102,7 @@ const CrearClienteJob = async(data)=>{
                 apellido_cliente: data.billing.last_name,
                 correo_cliente: data.billing.email,
                 telefono_cliente: data.billing.phone,
-                resp_contifico: ""
+                resp_contifico: crearClienteJSON.substring(0, 200)
             })
 
             console.log("Se a creado el cliente")
