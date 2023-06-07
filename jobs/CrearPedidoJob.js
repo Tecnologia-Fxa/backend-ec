@@ -51,7 +51,7 @@ const CrearPedidoJob = async (data) => {
           
       
           // Generar el nuevo documento basado en el actual
-          const nuevoDocumento = ManejoCodDoc(documentoActual?documentoActual.dataValues.documento:'070-002-000000002');
+          const nuevoDocumento = ManejoCodDoc(documentoActual?documentoActual.dataValues.documento:'070-002-000000003');
 
 
           let documento_ruc = data.meta_data.find(el => el.key === '_billing_document')
@@ -130,7 +130,7 @@ const CrearPedidoJob = async (data) => {
                 total_final: data.total,
                 direccion: data.shipping.address_1,
                 codigo_postal: data.shipping.postcode,
-                respContifico: JSON.stringify(resulCreateOrder.data)
+                respContifico: JSON.stringify(resulCreateOrder.data).substring(0, 300)
               },
               { transaction: t }
           )
