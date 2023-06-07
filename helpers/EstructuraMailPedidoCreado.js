@@ -70,7 +70,7 @@ const EstructuraMailPedidoCreado = (data, servientregaReturn) =>{
                                                             <h6 style="margin: 3px 20px;">Cantidad: ${orderItems.quantity}</h6>
                                                             <h6 style="margin: 3px 20px;">Subtotal: ${orderItems.total}</h6>
                                                             <h6 style="margin: 3px 20px;">Iva: ${orderItems.total_tax}</h6>
-                                                            <h6 style="margin: 3px 20px;">Total: ${orderItems.total + orderItems.total_tax}</h6>
+                                                            <h6 style="margin: 3px 20px;">Total: ${parseFloat(orderItems.total) + parseFloat(orderItems.total_tax)}</h6>
                                                         </div>
                                                         `
                                                     })}
