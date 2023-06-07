@@ -1,0 +1,3 @@
+#Ignorar Archivo .env#
+.env
+*./public/docs/*.pdf
