@@ -93,6 +93,7 @@ const CrearClienteJob = async(data)=>{
                 "adicional4_proveedor": null
             }
             const crearCliente = await axios.post(`${process.env.URLCONTIFICO}/persona/?pos=${process.env.AUTHORIZATION_CONTIFICO_TOKEN}`, estructuraCrearCliente, {headers})
+            console.log(JSON.stringify(crearCliente.data).substring(0, 200))
             await ClienteModel.upsert({
                 cedula_ruc:documento_ruc.value,
                 es_extranjero:(es_extranjero.value === "extranjero")?true:false,
@@ -101,7 +102,7 @@ const CrearClienteJob = async(data)=>{
                 apellido_cliente: data.billing.last_name,
                 correo_cliente: data.billing.email,
                 telefono_cliente: data.billing.phone,
-                resp_contifico:JSON.stringify(crearCliente.data).substring(0, 249)
+                resp_contifico: JSON.stringify(crearCliente.data).substring(0, 200)
             })
 
             console.log("Se a creado el cliente")
